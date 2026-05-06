@@ -1,4 +1,3 @@
-import { execFileSync } from "node:child_process";
 import { cpSync, existsSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -16,16 +15,11 @@ if (!existsSync(gitDir)) {
 }
 
 const outputDir = resolve(repoRoot, "docs");
-const distDir = resolve(webDir, "dist");
-
-execFileSync("npm", ["run", "build"], {
-  cwd: webDir,
-  stdio: "inherit",
-});
 
 rmSync(outputDir, { recursive: true, force: true });
 mkdirSync(outputDir, { recursive: true });
-cpSync(distDir, outputDir, { recursive: true });
+cpSync(resolve(webDir, "index.html"), resolve(outputDir, "index.html"));
+cpSync(resolve(webDir, "src"), resolve(outputDir, "src"), { recursive: true });
 writeFileSync(resolve(outputDir, ".nojekyll"), "");
 
-console.log(`Published Pages build to ${outputDir}`);
+console.log(`Published raw Pages files to ${outputDir}`);

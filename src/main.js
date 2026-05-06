@@ -1,6 +1,3 @@
-import "animate.css/animate.min.css";
-import "./styles.css";
-
 const heroFeatures = [
   {
     title: "Voice-first Linux control",
