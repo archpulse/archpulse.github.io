@@ -1,23 +1,23 @@
 const heroFeatures = [
   {
-    title: "Voice-first Linux control",
-    text: "Ask for system health, app launch, media controls, and weather without leaving the desktop.",
+    title: "System automation & Monitoring",
+    text: "Instantly check system health, top processes, memory usage, and receive city-aware daily briefings.",
   },
   {
-    title: "Plugin-driven by design",
-    text: "The assistant loads specialized plugins dynamically and keeps risky operations behind confirmation flows.",
+    title: "Integrated web research",
+    text: "Search the Arch Wiki, DuckDuckGo, Wikipedia, and IT news directly through voice or text commands.",
   },
   {
-    title: "Developer-friendly memory",
-    text: "Facts and conversation turns persist in SQLite so the assistant can remember preferences over time.",
+    title: "Persistent local memory",
+    text: "Remembers facts, preferences, and conversation history locally using a secure SQLite database.",
   },
 ];
 
 const workflowSteps = [
-  "Wake word or active voice session starts the loop.",
-  "The assistant checks memory, time, and current context.",
-  "Tools run only when needed, with timeouts and safety guards.",
-  "Plugin updates hot-reload without a full rewrite.",
+  "Launch the app and complete the first-run setup wizard.",
+  "Press [INIT] to load language models and calibrate audio.",
+  "Ask system questions or command web searches naturally.",
+  "Confirm and install vetted plugins to expand capabilities.",
 ];
 
 const showcaseSnippets = [
@@ -34,8 +34,8 @@ const showcaseSnippets = [
     value: "Check system health",
   },
   {
-    label: "Plugins",
-    value: "Search for plugins related to Arch monitoring",
+    label: "Vision",
+    value: "What is on my screen?",
   },
 ];
 
@@ -91,16 +91,16 @@ app.innerHTML = `
           </div>
 
           <h1 class="mt-6 text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
-            Liquid glass
+            Modular
             <span class="bg-gradient-to-r from-cyan-200 via-sky-300 to-violet-300 bg-clip-text text-transparent">
               Arch copilot
             </span>
-            with dynamic plugins.
+            with local memory.
           </h1>
 
           <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-            J.A.R.V.I.S. is an open-source voice assistant that mixes Arch Linux automation,
-            memory, web research, and safe plugin loading. Built to feel sharp, fast, and actually useful.
+            J.A.R.V.I.S. is an open-source voice assistant that combines Arch Linux automation,
+            persistent memory, web research, and screen awareness. Built for power users who want a practical Linux desktop companion.
           </p>
 
           <div class="mt-8 flex flex-wrap gap-4">
@@ -145,11 +145,11 @@ app.innerHTML = `
 
               <div class="mt-6 space-y-3 rounded-3xl border border-white/10 bg-slate-950/40 p-4 font-mono text-sm text-slate-200">
                 <div><span class="text-cyan-300">user</span>: Check system health</div>
-                <div><span class="text-violet-300">jarvis</span>: CPU, RAM, disk, and top processes are on screen.</div>
+                <div><span class="text-violet-300">jarvis</span>: System healthy. CPU at 12%, RAM 4.2GB used. Listing top processes...</div>
                 <div><span class="text-cyan-300">user</span>: Search Arch Wiki for pipewire latency</div>
-                <div><span class="text-violet-300">jarvis</span>: Pulling relevant Arch Wiki results now.</div>
-                <div><span class="text-cyan-300">user</span>: Search for plugins related to monitoring</div>
-                <div><span class="text-violet-300">jarvis</span>: Found candidates and waiting for confirmation.</div>
+                <div><span class="text-violet-300">jarvis</span>: Found 3 relevant articles. Opening the guide for PipeWire configuration.</div>
+                <div><span class="text-cyan-300">user</span>: What is on my screen?</div>
+                <div><span class="text-violet-300">jarvis</span>: Capturing screen... You have a terminal and a browser with the Arch Wiki open.</div>
               </div>
 
               <div class="mt-6 grid gap-3 sm:grid-cols-2">
@@ -181,9 +181,9 @@ app.innerHTML = `
 
         <div class="mt-10 grid gap-5 lg:grid-cols-3">
           ${[
-            ["Fast start", "The project has a sample env file, tests, and a clear setup path."],
-            ["Obvious value", "The demo flow shows system health, search, memory, and plugins immediately."],
-            ["OSS credibility", "MIT license, contribution guide, and a modular plugin architecture."],
+            ["Practical automation", "Check system health, top processes, and resource usage without opening multiple terminals."],
+            ["Research-ready", "Search the Arch Wiki and the web from one place, with results delivered directly to your assistant."],
+            ["Safe extensibility", "Load vetted plugins through a secure confirmation flow, keeping your system safe and modular."],
           ]
             .map(
               ([title, text], index) => `
